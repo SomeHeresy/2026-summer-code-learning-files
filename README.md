@@ -8,3 +8,8 @@ Learn some Python for data analysis. (June 29 - July 26)
 
 
 That's it. Since I already learned some Java so this should be not that hard :D
+
+
+## More Goals To Add
+
+Coming soon...
