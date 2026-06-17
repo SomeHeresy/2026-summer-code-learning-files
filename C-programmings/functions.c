@@ -9,11 +9,18 @@ int add(int num1,  int num2){
     return num1 + num2;
 }
 
+/*void function tht can be called without returning a value*/
+void say(){
+    printf("Imma brb\n");
+}
+
 int main(){
 
     int ans = add(6, 7);
     
     printf("6 + 7 = %d\n", ans);
+
+    say();
 
     return 0;
 }
