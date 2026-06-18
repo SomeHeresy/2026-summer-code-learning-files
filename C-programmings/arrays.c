@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+
+// function defined outside main
+void printArr(int arr[], int arrSize){
+    for(int i=0; i<arrSize; i++){
+        printf("%d ", arr[i]);
+    }
+}
+
 int main() {
 
     int numarr[6] = {1, 2, 3, 4, 5, 6}; //array of integers with 6 elements
@@ -32,12 +40,6 @@ int main() {
     //auto find size in functions
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int arrSize = sizeof(arr) / sizeof(arr[0]);
-
-    void printArr(int arr[], int arrSize){
-        for(int i=0; i<arrSize; i++){
-            printf("%d ", arr[i]);
-        }
-    }
 
     printArr(arr, arrSize);
 
