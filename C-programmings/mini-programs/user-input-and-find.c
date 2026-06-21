@@ -26,13 +26,10 @@ int main(){
         printf("Number not found in the array.\n");
     }
 
-
     askGPA(); // call the function to ask for GPA
-
 
     char name[50];
     getName(name); // call the function to get name from user
-
 
     return 0;
 }
@@ -41,10 +38,10 @@ int getNum(){
     int num;
     while (1) {
         printf("Enter a number: ");
-            if (scanf("%d", &num) == 1) {
-                printf("You entered: %d\n", num);
-                break;
-            }
+        if (scanf("%d", &num) == 1) {
+            printf("You entered: %d\n", num);
+            break;
+        }
         printf("Invalid input. Please enter a valid integer.\n");
         int c;
         while ((c = getchar()) != '\n' && c != EOF);
