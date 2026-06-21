@@ -59,17 +59,16 @@ double divide(double x, double y){
 }
 
 char enterOperator(){
+    char buffer[100]; // Buffer to read input as a string
     char op;
     while (1) {
         printf("Enter operator (+ - * /): ");
-        scanf(" %c", &op);
+        fgets(buffer, sizeof(buffer), stdin); // Read operator as a string to handle extra input
+        op = buffer[0]; // Take the first character as the operator
 
         if (op == '+' || op == '-' || op == '*' || op == '/') {
             break;  // valid input, exit loop
         }
-
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF);
 
         printf("Invalid operator. Try again.\n");
     }
@@ -79,23 +78,18 @@ char enterOperator(){
 
 double enterNumber(){
     double num;
-    
+    char buffer[100]; // Buffer to read input as a string
+
     while (1) {
         printf("Enter a number: ");
 
-        int result = scanf("%lf", &num);
+        fgets(buffer, sizeof(buffer), stdin); // Read number as a string to handle extra input
+        double result = atof(buffer);
 
-        if (result == 1) {
-            // clean leftover input
-            int c;
-            while ((c = getchar()) != '\n' && c != EOF);
+        if (sscanf(buffer, "%lf", &num) == 1) {
             return num;
         }
 
         printf("Invalid input. Please enter a valid number.\n");
-
-        // clear bad input like "23d"
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF);
     }
 }
