@@ -1,0 +1,44 @@
+#include <LiquidCrystal.h>
+int rs = 7;
+int en = 8;
+int d4 = 9;
+int d5 = 10;
+int d6 = 11;
+int d7 = 12;
+
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() {
+  // put your setup code here, to run once:
+  lcd.begin(16, 2);
+  int distance = 45;
+  char displayBuffer[16];
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  for (int i = 1; i <= 10; i++) {
+    lcd.clear();
+    lcd.setCursor(0, 1);
+    lcd.print("trial ");
+    lcd.print(i);
+    delay(300);
+  }
+
+  delay(500);
+
+  lcd.setCursor(0,0);
+  lcd.print("Hello World");
+  delay(1000);
+
+  lcd.clear();
+  delay(500);
+
+  lcd.setCursor(0,0);
+  lcd.print("First LCD");
+  delay(1000);
+  
+  lcd.clear();
+  delay(500);
+
+}
