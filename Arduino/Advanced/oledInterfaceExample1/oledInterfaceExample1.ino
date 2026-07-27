@@ -1,3 +1,7 @@
+/*Simple example of using data from DHT11 (Temperature and Humidity Sensor)
+to display on OLED screen with I2C interface*/
+
+
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -44,14 +48,23 @@ void loop() {
     return;
   }
 
+  //clear old pixels before drawing new data, or the number are gonna overlap
+  display.clearDisplay();
+
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+
+  display.setCursor(14, 0);
+  display.println("EMCG Control V1.0");
+
   display.setCursor(0, 20);
   display.print("Temp: ");
-  display.print(temperature);
+  display.print(temperature, 1);  // 1 decimal place
   display.println(" C");
 
   display.setCursor(0, 35);
   display.print("Humidity: ");
-  display.print(humidity);
+  display.print(humidity, 1);    // 1 decimal place
   display.println(" %");
 
   display.display();
